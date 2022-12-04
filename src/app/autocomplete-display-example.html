@@ -1,0 +1,15 @@
+<mat-form-field class="example-full-width">
+  <input
+    type="text"
+    placeholder="Choisissez votre pays favori"
+    aria-label="Text"
+    matInput
+    [matAutocomplete]="auto"
+    [formControl]="controlInput"
+  />
+  <mat-autocomplete #auto [displayWith]="fonctionAffichage">
+    <mat-option *ngFor="let option of filteredOptions | async" [value]="option">
+      {{ option.nom }}
+    </mat-option>
+  </mat-autocomplete>
+</mat-form-field>
